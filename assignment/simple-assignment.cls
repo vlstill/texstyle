@@ -2,8 +2,9 @@
 % style for homeworks for IB102 Automata, Grammars, and Complexity
 % (c) 2013 Vladimír Štill, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
 % (c) 2014 Vladimír Štill modifications for NTNU's TDT4205
+% (c) 2014 Vladimír Štill generalized as general purpose template
 
-\ProvidesClass{ib102}[2013/06/29 v 0.1 IB102]
+\ProvidesClass{simple-assignment}[2013/06/29 v 0.1 IB102]
 \NeedsTeXFormat{LaTeX2e}
 
 
@@ -27,7 +28,6 @@
 \usetikzlibrary{calc,arrows,automata}
 
 \newcommand{\eps}{\varepsilon}
-\newcommand{\coL}{co\mbox{$-$}L}
 \newcommand{\move}{\rightarrow}
 \newcommand{\set}[1]{\ensuremath{\{ #1 \}}}
 
@@ -43,25 +43,36 @@
 \def\@assignment{0}
 \newcommand{\setassignment}[1]{\def\@assignment{#1}}
 
+\def\@course{}
+\newcommand{\setcourse}[1]{\def\@course{#1}}
+
+\def\@problemname{Problem set}
+\newcommand{\setproblemname}[1]{\def\@problemname{#1}}
+
 %% HEADER
 \pagestyle{fancyplain}
 \fancyhf{}
 
 \lhead{\large
-    \textbf{TDT4205 -- Problem set \@assignment
-        \hfill \@student
+    \textbf{\@course{} -- \@problemname{} \@assignment{}
+        \hfill \@student{}%
     }
 }
 
 %% DOCUMENT ENVIRONMENTS
 
 \newcounter{ctProblem}
-\newcommand{\prob}{%
-       \stepcounter{ctProblem}%
-          \thectProblem}
+\newcommand{\prob}{\stepcounter{ctProblem}\thectProblem}
 
 \newenvironment{problem}{%
     \subsection*{Problem \prob}
+}{}
+
+\newcounter{ctSubproblem}[ctProblem]
+\newcommand{\subprob}{\stepcounter{ctSubproblem}\alph{ctSubproblem}}
+
+\newenvironment{subproblem}{\bigskip\par\noindent%
+    {}\subprob{})
 }{}
 
 \cfoot{\thepage}
