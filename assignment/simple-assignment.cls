@@ -1,6 +1,6 @@
 % ib102.sty
 % style for homeworks for IB102 Automata, Grammars, and Complexity
-% (c) 2013 Vladimír Štill, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
+% (c) 2013 Vladimír Štill, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
 % (c) 2014 Vladimír Štill modifications for NTNU's TDT4205
 % (c) 2014 Vladimír Štill generalized as general purpose template
 
