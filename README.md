@@ -21,9 +21,9 @@ you state the authors as provided by the style itself. You do not have
 to include this attribution in the resulting document (for example
 PDF), keeping it in the source is sufficient.
 
-## Develompment info
+## Development info
 
-Feel free to make a fork and pull request. But hold with wollowing rules:
+Feel free to make a fork and pull request. But hold with following rules:
 
 *   Please keep commits to different directories separated and prefix
     them with directory name.
