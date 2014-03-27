@@ -25,7 +25,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}   %důkazy
-\usetikzlibrary{calc,arrows,automata}
+\usetikzlibrary{calc,arrows,automata,positioning}
 
 \newcommand{\eps}{\varepsilon}
 \newcommand{\move}{\rightarrow}
