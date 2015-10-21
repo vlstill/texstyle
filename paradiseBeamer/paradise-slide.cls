@@ -172,7 +172,7 @@
                           , leftskip=\skip@length, rightskip=\skip@length]%
                           {frametitle}
         \insertframetitle
-        \if@nologo{}\else{\hfill\includegraphics[height=1em, trim={0 0 13em 0}, clip]{paradise.eps}}\fi
+        \if@nologo{}\else{\hfill\includegraphics[height=1em, trim={0 0 13em 0}, clip]{paradise.pdf}}\fi
     \end{beamercolorbox}\par%
     \ifx\insertframesubtitle\empty%
     \else
@@ -251,7 +251,7 @@
        \\\vspace{.4\sc@em}%
        \textbf{ParaDiSe Laboratory}%
     }\else{%
-        \includegraphics[height=4\sc@em]{paradise.eps}%
+        \includegraphics[height=4\sc@em]{paradise.pdf}%
     }\fi%
     \\\vspace{.4\sc@em}%
     % Faculty of Informatics%
