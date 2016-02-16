@@ -269,7 +269,7 @@
     }\fi%
     \\\vspace{.4\sc@em}%
     % Faculty of Informatics%
-    Masaryk University%
+    \iflanguage{czech}{Masarykova univerzita}{Masaryk University}%
     \\\vspace{.4\sc@em}%
-    Brno, Czech Republic%
+    Brno, \iflanguage{czech}{Česká republika}{Czech Republic}%
 }
