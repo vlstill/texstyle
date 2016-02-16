@@ -44,6 +44,7 @@
 \RequirePackage{listings}
 \RequirePackage[oldenum,olditem]{paralist}
 \RequirePackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
 \RequirePackage{pgf}
 \RequirePackage{tikz}
