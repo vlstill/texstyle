@@ -15,8 +15,22 @@
 \ProcessOptions \relax
 \LoadClass{beamer}
 
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[T1]{fontenc}
+\ifxetex
+  \RequirePackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \RequirePackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \RequirePackage[T1]{fontenc}
+    \RequirePackage[utf8]{inputenc}
+    \usepackage{eurosym}
+  \fi
+\fi
+
 % this is hard decision, lmodern has weird ď and I'm not sure about other
 % czech letters, but computer modern lacks bold typewriter version, which is
 % needed for code typesetting. To make it worse lmodern lacks bold smallcaps,
