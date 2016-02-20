@@ -46,6 +46,7 @@
 
 \RequirePackage{pgf}
 \RequirePackage{tikz}
+\RequirePackage{tikz-qtree}
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}   %důkazy
@@ -94,8 +95,10 @@
             {Š}{{\v{S}}}1 {Ť}{{\v{T}}}1 {Ž}{{\v{Z}}}1 {Ů}{{\r{U}}}1
             {ě}{{\v{e}}}1 {Ě}{{\v{E}}}1 {ý}{{\'{y}}}1 {Ý}{{\'{Y}}}1
             % code literals
+            {===}{$\equiv$}1 {~}{{$\sim$}}1
             {~>}{{$\leadsto$}}2 {~>*}{{$\leadsto^*$}}2
             {`}{{\textasciigrave}}1
+            {λ}{$\lambda$}1
 }
 
 \newcommand{\eps}{\varepsilon}
@@ -148,6 +151,9 @@
 \setbeamercolor{date in head/foot}{fg=darkgray, bg=filight}
 \setbeamercolor{title in head/foot}{fg=darkgray, bg=filight}
 
+\newcommand{\semester}[1]{\date{#1}}
+
+
 \setbeamertemplate{footline}
 {
 \leavevmode%
@@ -157,7 +163,7 @@
 %    \end{beamercolorbox}%
 %
     \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex]{title in head/foot}%
-        \usebeamerfont{title in head/foot}~\insertshorttitle~--~\insertshortsubtitle
+        \usebeamerfont{title in head/foot}~\insertshortsubtitle: \insertshorttitle
     \end{beamercolorbox}%
 %
     \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
@@ -169,6 +175,10 @@
 
  %remove navigation symbols
 \setbeamertemplate{navigation symbols}{}
+
+\newenvironment{poznamka}[1][\@empty]{%
+    \footnotesize{}\textit{\ifx#1\@empty Poznámka\else #1\fi}: %
+}{}
 
 % fit PDF in viewer
 \hypersetup{pdfstartview={Fit}}
