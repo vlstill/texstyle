@@ -2,7 +2,7 @@
 % (c) 2014 Vladimír Štill template for PB173 slides
 % (c) 2016 Vladimír Štill generic slides for FI MU
 
-\ProvidesClass{slides}[2016/02/17 v 0.2 slides]
+\ProvidesClass{slides}[2016/02/17 v 0.3 slides]
 \NeedsTeXFormat{LaTeX2e}
 
 \newif\if@bw\@bwfalse
@@ -57,6 +57,14 @@
           \only<#1>{\pgfkeysalso{#2}} % \pgfkeysalso doesn't change the path
 }}
 
+\RequirePackage{textcomp}
+\RequirePackage[space=true]{accsupp}
+\newcommand{\lecture@pdfactualhex}[3]{%
+\newcommand{#1}{\BeginAccSupp{method=hex,ActualText=#2}#3\EndAccSupp{}}}
+\lecture@pdfactualhex{\lecture@space}{2020}{\ \ }
+\lecture@pdfactualhex{\lecture@btick}{60}{\textasciigrave}
+\lecture@pdfactualhex{\lecture@squote}{27}{'}
+
 \RequirePackage{listings}
 {\ttfamily
 \sbox0{A}
@@ -97,8 +105,8 @@
             % code literals
             {===}{$\equiv$}1 {~}{{$\sim$}}1
             {~>}{{$\leadsto$}}2 {~>*}{{$\leadsto^*$}}2
-            {`}{{\textasciigrave}}1
             {λ}{$\lambda$}1
+            {`}{\lecture@btick}1 {'}{\lecture@squote}1 {\ \ }{\lecture@space}2
 }
 
 \newcommand{\eps}{\varepsilon}
