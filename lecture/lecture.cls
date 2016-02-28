@@ -23,6 +23,7 @@
     \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
     \newcommand{\euro}{€}
   \else
+    \RequirePackage{etex}
     \RequirePackage[T1]{fontenc}
     \RequirePackage[utf8]{inputenc}
     \usepackage{eurosym}
