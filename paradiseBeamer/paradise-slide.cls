@@ -202,6 +202,21 @@
     \fi%
 }
 
+\def\block@begin#1{
+    \vspace{0.5ex}%
+    {\usebeamerfont*{block #1 title}
+    \begin{beamercolorbox}[colsep*=.75ex, ht=3.5ex]{block title}%
+        \insertblocktitle%
+    \end{beamercolorbox}}%
+    \usebeamerfont{block #1 body}%
+    \begin{beamercolorbox}{block #1 body}%
+    \vspace{-3ex}%
+}
+
+\setbeamertemplate{block begin}{\block@begin{}}
+\setbeamertemplate{block example begin}{\block@begin{example}}
+\setbeamertemplate{block alerted begin}{\block@begin{alerted}}
+
 \def\block@end{
     \end{beamercolorbox}%
     \nointerlineskip%
