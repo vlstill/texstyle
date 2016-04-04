@@ -1,7 +1,7 @@
 % paradise-slide.sty
 % (c) 2014 Vladimír Štill ParaDiSe slides
 
-\ProvidesClass{paradise-slide}[2014/09/12 v 0.1 ParaDiSe]
+\ProvidesClass{paradise-slide}[2014/09/12 v 0.2 ParaDiSe]
 \NeedsTeXFormat{LaTeX2e}
 
 \newif\if@bw\@bwfalse
@@ -105,6 +105,7 @@
 \definecolor{filight}{HTML}{F7F0BE}
 
 \definecolor{paradisegreen}{HTML}{45A931} % {3FB050} % {45A931}
+
 % on black and white save some ink/toner
 \if@bw
     \definecolor{fiyellow}{HTML}{FFFFFF}
@@ -119,12 +120,12 @@
 \setbeamercolor{block body}{use={background canvas}, bg=background canvas.bg}
 \setbeamercolor{block body example}{use={block body}, bg=block body.bg}
 
-\setbeamercolor{block title alerted}{use={normal text},fg=normal text.fg, bg=paradisegreen!80}
-\setbeamercolor{block title}{use={normal text}, bg=paradisegreen!80, fg=normal text.fg}
-\setbeamercolor{block title example}{use={normal text},fg=normal text.fg, bg=paradisegreen!80}
+\setbeamercolor{block title alerted}{use={normal text},fg=title.fg, bg=structure.bg}
+\setbeamercolor{block title}{use={normal text}, bg=structure.bg, fg=title.fg}
+\setbeamercolor{block title example}{use={normal text},fg=title.fg, bg=structure.bg}
 
 \setbeamercolor{fine separation line}{}
-\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{frametitle}{fg=title.fg}
 \setbeamercolor{item projected}{fg=black}
 \setbeamercolor{normal text}{bg=white,fg=black}
 
@@ -137,17 +138,18 @@
 \setbeamercolor{separation line}{}
 \setbeamercolor{sidebar}{bg=white}
 \setbeamercolor{sidebar}{parent=palette primary}
-\setbeamercolor{structure}{bg=paradisegreen, fg=paradisegreen}
+\setbeamercolor{structure}{bg=paradisegreen!85!black, fg=paradisegreen}
 \setbeamercolor{subsection in sidebar}{fg=black}
 \setbeamercolor{subsection in sidebar shaded}{fg=paradisegreen}
-\setbeamercolor{title}{fg=black}
-\setbeamercolor{titlelike}{fg=black}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{titlelike}{fg=title.fg}
 
 \setbeamercolor{author in foot}{fg=black, bg=paradisegreen}
 \setbeamercolor{title in foot}{fg=black, bg=paradisegreen!80}
 \setbeamercolor{date in foot}{fg=black, bg=paradisegreen}
+\setbeamercolor{slide number in foot}{bg=normal text.bg, fg=black}
 
-\setbeamercolor{framesubtitle}{bg=paradisegreen!80}
+\setbeamercolor{framesubtitle}{bg=paradisegreen}
 
 \setbeamerfont{institute}{size=\small}
 \setbeamerfont{date}{size=\footnotesize}
@@ -156,22 +158,10 @@
 {
 \leavevmode%
 \hbox{%
-    \begin{beamercolorbox}[wd=.3\paperwidth, ht=2.25ex, dp=1ex%
-                          , leftskip=1em, rightskip=1em]%
-                          {author in foot}%
-        \usebeamerfont{author in foot}\insertshortauthor
-    \end{beamercolorbox}%
-%
-    \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex%
-                          , leftskip=1em, rightskip=1em]
-                          {title in foot}%
-        \usebeamerfont{title in foot}\insertshorttitle
-    \end{beamercolorbox}%
-%
-    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex%
                           , right, rightskip=1em]% align right
-                          {date in foot}%
-        \usebeamerfont{date in foot}\insertshortdate{}\hspace{2em}
+                          {slide number in foot}%
+        \usebeamerfont{slide number in foot}\hfill
         \insertframenumber{} / \inserttotalframenumber
 \end{beamercolorbox}}%
 \vskip0pt%
