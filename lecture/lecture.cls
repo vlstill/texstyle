@@ -130,12 +130,15 @@
 
 \setbeamercolor{alerted text}{fg=red} % ??
 \setbeamercolor{background canvas}{bg=white}
-\setbeamercolor{block body alerted}{bg=normal text.bg!90!black}
-\setbeamercolor{block body}{bg=normal text.bg!90!black}
-\setbeamercolor{block body example}{bg=normal text.bg!90!black}
-\setbeamercolor{block title alerted}{use={normal text,alerted text},fg=alerted text.fg!75!normal text.fg,bg=normal text.bg!75!black}
-\setbeamercolor{block title}{bg=black}
-\setbeamercolor{block title example}{use={normal text,example text},fg=example text.fg!75!normal text.fg,bg=normal text.bg!75!black}
+
+\setbeamercolor{block body alerted}{use={block body}, bg=block body.bg}
+\setbeamercolor{block body}{use={background canvas}, bg=background canvas.bg}
+\setbeamercolor{block body example}{use={block body}, bg=block body.bg}
+
+\setbeamercolor{block title alerted}{use={normal text},fg=normal text.fg, bg=fiyellow}
+\setbeamercolor{block title}{use={normal text}, bg=fiyellow, fg=normal text.fg}
+\setbeamercolor{block title example}{use={normal text},fg=normal text.fg, bg=fiyellow}
+
 \setbeamercolor{fine separation line}{}
 \setbeamercolor{frametitle}{fg=black}
 \setbeamercolor{item projected}{fg=black}
@@ -184,6 +187,19 @@
 
  %remove navigation symbols
 \setbeamertemplate{navigation symbols}{}
+
+\def\block@end{
+    \end{beamercolorbox}%
+    \nointerlineskip%
+    \block@rule@size=\textwidth%
+    \addtolength\block@rule@size{1.5ex}%
+    \vspace{0.25ex}%
+    \hbox{\hspace*{-0.75ex}\textcolor{fiyellow}{\rule{\block@rule@size}{0.1em}}}%
+}
+\newlength\block@rule@size
+\setbeamertemplate{block end}{\block@end}
+\setbeamertemplate{block example end}{\block@end}
+\setbeamertemplate{block alerted end}{\block@end}
 
 \newenvironment{poznamka}[1][\@empty]{%
     \footnotesize{}\textit{\ifx#1\@empty Poznámka\else #1\fi}: %
