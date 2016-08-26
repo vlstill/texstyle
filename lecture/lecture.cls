@@ -68,7 +68,6 @@
 \newcommand{#1}{\BeginAccSupp{method=hex,ActualText=#2}#3\EndAccSupp{}}}
 \lecture@pdfactualhex{\lecture@space}{2020}{\ \ }
 \lecture@pdfactualhex{\lecture@btick}{60}{\textasciigrave}
-\lecture@pdfactualhex{\lecture@squote}{27}{'}
 
 \RequirePackage{listings}
 {\ttfamily
@@ -89,6 +88,7 @@
        , showstringspaces = false
        , breakatwhitespace = true
        , morekeywords={nullptr,decltype,static_assert,override,final,constexpr,noexcept}
+       , upquote=true
        , literate =
             % UTF-8 european
             {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
@@ -112,7 +112,7 @@
             {~>}{{$\leadsto$}}2 {~>*}{{$\leadsto^*$}}2
             {`}{{\textasciigrave}}1
             {λ}{$\lambda$}1
-            {`}{\lecture@btick}1 {'}{\lecture@squote}1 {\ \ }{\lecture@space}2
+            {`}{\lecture@btick}1 {\ \ }{\lecture@space}2
 }
 
 \newcommand{\eps}{\varepsilon}
