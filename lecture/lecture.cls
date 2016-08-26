@@ -17,24 +17,25 @@
   \RequirePackage{fontspec,xltxtra,xunicode}
   \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
   \newcommand{\euro}{€}
+  \setmainfont{Latin Modern Roman}
 \else
   \ifluatex
     \RequirePackage{fontspec}
     \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
     \newcommand{\euro}{€}
+    \setmainfont{Latin Modern Roman}
   \else
     \RequirePackage{etex}
     \RequirePackage[T1]{fontenc}
     \RequirePackage[utf8]{inputenc}
     \usepackage{eurosym}
+    % this is hard decision, lmodern has weird ď and I'm not sure about other
+    % czech letters, but computer modern lacks bold typewriter version, which is
+    % needed for code typesetting. To make it worse lmodern lacks bold smallcaps,
+    % but those are barely ever needed
+    \RequirePackage{lmodern}
   \fi
 \fi
-
-% this is hard decision, lmodern has weird ď and I'm not sure about other
-% czech letters, but computer modern lacks bold typewriter version, which is
-% needed for code typesetting. To make it worse lmodern lacks bold smallcaps,
-% but those are barely ever needed
-\RequirePackage{lmodern}
 
 \RequirePackage{fancyhdr}
 \RequirePackage{ifthen}
@@ -53,6 +54,9 @@
 \RequirePackage{amsthm}   %důkazy
 \RequirePackage{textcomp} % extra non-math fonts
 \usetikzlibrary{calc,arrows,automata,positioning,shapes}
+
+\let\compactitem\itemize
+\let\endcompactitem\enditemize
 
 \tikzset{onslide/.code args={<#1>#2}{%
           \only<#1>{\pgfkeysalso{#2}} % \pgfkeysalso doesn't change the path
@@ -106,6 +110,7 @@
             % code literals
             {===}{$\equiv$}1 {~}{{$\sim$}}1
             {~>}{{$\leadsto$}}2 {~>*}{{$\leadsto^*$}}2
+            {`}{{\textasciigrave}}1
             {λ}{$\lambda$}1
             {`}{\lecture@btick}1 {'}{\lecture@squote}1 {\ \ }{\lecture@space}2
 }
@@ -113,6 +118,9 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\move}{\rightarrow}
 \newcommand{\set}[1]{\ensuremath{\{ #1 \}}}
+
+% for correct PDF metadata encoding
+\hypersetup{pdfencoding=auto}
 
 % theme
 
@@ -163,7 +171,8 @@
 \setbeamercolor{date in head/foot}{fg=darkgray, bg=filight}
 \setbeamercolor{title in head/foot}{fg=darkgray, bg=filight}
 
-\newcommand{\semester}[1]{\date{#1}}
+\def\@semester{PLEASE SET SEMESTER}
+\newcommand{\semester}[1]{\def\@semester{#1}\date{#1}}
 
 
 \setbeamertemplate{footline}
@@ -185,7 +194,7 @@
 \vskip0pt%
 }
 
- %remove navigation symbols
+%remove navigation symbols
 \setbeamertemplate{navigation symbols}{}
 
 \def\block@end{
