@@ -126,7 +126,7 @@
 
 \setbeamercolor{fine separation line}{}
 \setbeamercolor{frametitle}{fg=title.fg}
-\setbeamercolor{item projected}{fg=black}
+\setbeamercolor{item projected}{fg=white, bg=paradisegreen!85!black}
 \setbeamercolor{normal text}{bg=white,fg=black}
 
 \setbeamercolor{palette sidebar primary}{use=normal text,fg=normal text.fg}
@@ -138,7 +138,7 @@
 \setbeamercolor{separation line}{}
 \setbeamercolor{sidebar}{bg=white}
 \setbeamercolor{sidebar}{parent=palette primary}
-\setbeamercolor{structure}{bg=paradisegreen!85!black, fg=paradisegreen}
+\setbeamercolor{structure}{bg=paradisegreen!85!black, fg=paradisegreen!85!black}
 \setbeamercolor{subsection in sidebar}{fg=black}
 \setbeamercolor{subsection in sidebar shaded}{fg=paradisegreen}
 \setbeamercolor{title}{fg=white}
