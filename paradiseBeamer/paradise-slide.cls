@@ -200,7 +200,6 @@
     \end{beamercolorbox}}%
     \usebeamerfont{block #1 body}%
     \begin{beamercolorbox}{block #1 body}%
-    \vspace{-3ex}%
 }
 
 \setbeamertemplate{block begin}{\block@begin{}}
@@ -209,6 +208,7 @@
 
 \def\block@end{
     \end{beamercolorbox}%
+    \smallskip%
     \nointerlineskip%
     \block@rule@size=\textwidth%
     \addtolength\block@rule@size{1.5ex}%
