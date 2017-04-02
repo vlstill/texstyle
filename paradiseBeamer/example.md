@@ -1,14 +1,14 @@
-% \divine{}
-% Vladimír Štill
-% 5. října 2015
 
 ---
-subtitle: Tree Compression (SEFM 2015),\newline
-    Weak-Memory as LLVM-2-LLVM (MEMICS 2015)
+title: \divine{}
+authors: Vladimír Štill
+date: {5. října 2015}
 header-includes:
     - \usepackage{divine}
 lang: czech
 ...
+subtitle: Tree Compression (SEFM 2015),\newline
+    Weak-Memory as LLVM-2-LLVM (MEMICS 2015)
 
 
 ## Cíle přednášky

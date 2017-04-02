@@ -7,5 +7,5 @@ all : mds
 mds :	$(ALL_MD:.md=.pdf)
 
 %.pdf : %.md
-	 pandoc --slide-level=2 -V documentclass=paradise-slide -s $< -t beamer -f markdown+raw_tex -o $@
+	 pandoc --slide-level=2 -V documentclass=paradise-slide -s $< -t beamer -f markdown+raw_tex -o $@ --template=template.tex
 
