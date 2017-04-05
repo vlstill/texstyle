@@ -28,14 +28,14 @@
     \RequirePackage[T1]{fontenc}
     \RequirePackage[utf8]{inputenc}
     \usepackage{eurosym}
+
+    % this is hard decision, lmodern has weird ď and I'm not sure about other
+    % czech letters, but computer modern lacks bold typewriter version, which is
+    % needed for code typesetting. To make it worse lmodern lacks bold smallcaps,
+    % but those are barely ever needed
+    \RequirePackage{lmodern}
   \fi
 \fi
-
-% this is hard decision, lmodern has weird ď and I'm not sure about other
-% czech letters, but computer modern lacks bold typewriter version, which is
-% needed for code typesetting. To make it worse lmodern lacks bold smallcaps,
-% but those are barely ever needed
-\RequirePackage{lmodern}
 
 \RequirePackage{fancyhdr}
 \RequirePackage{ifthen}
