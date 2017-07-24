@@ -1,6 +1,26 @@
-\newcommand{\divine}{\textsf{DIVINE}}
-\newcommand{\llvm}{\textsf{LLVM}}
-\newcommand{\clang}{\textsf{Clang}}
-\newcommand{\ltl}{LTL}
-\newcommand{\lart}{\textsf{LART}}
+\usepackage{xspace}
+\newcommand{\divine}{\textsf{DIVINE}\xspace}
+\newcommand{\llvm}{\textsf{LLVM}\xspace}
+\newcommand{\divm}{\textsf{DiVM}\xspace}
+\newcommand{\clang}{\textsf{Clang}\xspace}
+\newcommand{\ltl}{LTL\xspace}
+\newcommand{\lart}{\textsf{LART}\xspace}
 \newcommand{\ltol}{$\llvm \rightarrow \llvm$}
+
+\usetikzlibrary{fit,backgrounds,decorations.pathreplacing}
+
+\tikzset{
+    *|/.style={
+        to path={
+            (perpendicular cs: horizontal line through={(\tikztostart)},
+                                 vertical line through={(\tikztotarget)})
+            % is the same as (\tikztostart -| \tikztotarget)
+            % but just to be safe: http://tex.stackexchange.com/a/29781/16595
+            -- (\tikztotarget) \tikztonodes
+        }
+    },
+	|*/.style={to path={
+		(\tikztostart) -- (perpendicular cs: vertical line through={(\tikztostart)},
+											 horizontal line through={(\tikztotarget)})
+    }}
+}
