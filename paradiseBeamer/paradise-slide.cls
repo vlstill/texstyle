@@ -125,7 +125,6 @@
 \setbeamercolor{block title example}{use={normal text},fg=title.fg, bg=structure.bg}
 
 \setbeamercolor{fine separation line}{}
-\setbeamercolor{frametitle}{fg=title.fg}
 \setbeamercolor{item projected}{fg=white, bg=paradisegreen!85!black}
 \setbeamercolor{normal text}{bg=white,fg=black}
 
@@ -141,15 +140,16 @@
 \setbeamercolor{structure}{bg=paradisegreen!85!black, fg=paradisegreen!85!black}
 \setbeamercolor{subsection in sidebar}{fg=black}
 \setbeamercolor{subsection in sidebar shaded}{fg=paradisegreen}
-\setbeamercolor{title}{fg=white}
-\setbeamercolor{titlelike}{fg=title.fg}
+\setbeamercolor{title}{fg=normal text.fg, bg=normal text.bg}
+\setbeamercolor{titlelike}{fg=title.fg, bg=title.bg}
 
 \setbeamercolor{author in foot}{fg=black, bg=paradisegreen}
 \setbeamercolor{title in foot}{fg=black, bg=paradisegreen!80}
 \setbeamercolor{date in foot}{fg=black, bg=paradisegreen}
 \setbeamercolor{slide number in foot}{bg=normal text.bg, fg=black}
 
-\setbeamercolor{framesubtitle}{bg=paradisegreen}
+\setbeamercolor{frametitle}{bg=normal text.bg, fg=normal text.fg}
+\setbeamercolor{framesubtitle}{bg=normal text.bg, fg=normal text.fg}
 
 \setbeamerfont{institute}{size=\small}
 \setbeamerfont{date}{size=\footnotesize}
@@ -173,15 +173,18 @@
     \nointerlineskip%
     \global\skip@length=1ex
     \usebeamerfont{frametitle}
-    \begin{beamercolorbox}[wd=\paperwidth, dp=1ex, ht=2.75ex%
+    \begin{beamercolorbox}[wd=\paperwidth, dp=1ex, ht=2.5ex%
                           , leftskip=\skip@length, rightskip=\skip@length]%
                           {frametitle}
         \insertframetitle
         \if@nologo{}\else{\hfill\includegraphics[height=1em, trim={0 0 13em 0}, clip]{paradise.pdf}}\fi
-    \end{beamercolorbox}\par%
+    \end{beamercolorbox}%
+    \par%
     \ifx\insertframesubtitle\empty%
     \else
         \nointerlineskip
+        \begin{beamercolorbox}[ht=0.05em, wd=\paperwidth]{structure}%
+        \end{beamercolorbox} %
         \vskip-0.1\skip@length
         \usebeamerfont{framesubtitle}
         \begin{beamercolorbox}[wd=\paperwidth, dp=1ex, ht=2.25ex%
@@ -190,16 +193,23 @@
             \textbf{\insertframesubtitle}
         \end{beamercolorbox}%
     \fi%
+    \nointerlineskip
+    \vspace*{-0.3ex}%
+    \begin{beamercolorbox}[ht=0.1em, wd=\paperwidth]{structure}%
+    \end{beamercolorbox} %
 }
 
 \def\block@begin#1{
     \vspace{0.5ex}%
     {\usebeamerfont*{block #1 title}
-    \begin{beamercolorbox}[colsep*=.75ex, ht=3.5ex]{block title}%
-        \insertblocktitle%
+    \begin{beamercolorbox}[colsep*=.75ex, ht=0.1em]{block title}%
+    \end{beamercolorbox}
+        \insertblocktitle\\[-1.5ex]
+    \begin{beamercolorbox}[colsep*=.75ex, ht=0.05em]{block title}%
     \end{beamercolorbox}}%
     \usebeamerfont{block #1 body}%
     \begin{beamercolorbox}{block #1 body}%
+    \vspace{-1ex}%
 }
 
 \setbeamertemplate{block begin}{\block@begin{}}
@@ -213,7 +223,8 @@
     \block@rule@size=\textwidth%
     \addtolength\block@rule@size{1.5ex}%
     \vspace{0.25ex}%
-    \hbox{\hspace*{-0.75ex}\textcolor{paradisegreen!80}{\rule{\block@rule@size}{0.1em}}}%
+    \begin{beamercolorbox}[colsep*=.75ex, ht=0.1em]{block title}%
+    \end{beamercolorbox}
 }
 \newlength\block@rule@size
 \setbeamertemplate{block end}{\block@end}
@@ -233,6 +244,9 @@
         \vskip0.25em%
         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
         \fi%
+    \end{beamercolorbox}%
+    \nointerlineskip%
+    \begin{beamercolorbox}[sep=8pt,center,ht=0.1em]{structure}%
     \end{beamercolorbox}%
     %
     \vskip1.5em\par
