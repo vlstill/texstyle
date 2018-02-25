@@ -183,11 +183,11 @@
 %        \usebeamerfont{author in head/foot}~\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
 %    \end{beamercolorbox}%
 %
-    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex]{title in head/foot}%
+    \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex]{title in head/foot}%
         \usebeamerfont{title in head/foot}~\insertshortsubtitle: \insertshorttitle
     \end{beamercolorbox}%
 %
-    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
         \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
         \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
 \end{beamercolorbox}}%
