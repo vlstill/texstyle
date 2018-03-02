@@ -202,10 +202,10 @@
 \def\block@begin#1{
     \vspace{0.5ex}%
     {\usebeamerfont*{block #1 title}
-    \begin{beamercolorbox}[colsep*=.75ex, ht=0.1em]{block title}%
+    \begin{beamercolorbox}[colsep*=.75ex, ht=-1.2ex]{block title}%
     \end{beamercolorbox}
-        \insertblocktitle\\[-1.5ex]
-    \begin{beamercolorbox}[colsep*=.75ex, ht=0.05em]{block title}%
+        \vspace{0.25ex}\insertblocktitle\\[-2.3ex]
+    \begin{beamercolorbox}[colsep*=.75ex, ht=-1.3ex]{block title}%
     \end{beamercolorbox}}%
     \usebeamerfont{block #1 body}%
     \begin{beamercolorbox}{block #1 body}%
@@ -220,10 +220,7 @@
     \end{beamercolorbox}%
     \smallskip%
     \nointerlineskip%
-    \block@rule@size=\textwidth%
-    \addtolength\block@rule@size{1.5ex}%
-    \vspace{0.25ex}%
-    \begin{beamercolorbox}[colsep*=.75ex, ht=0.1em]{block title}%
+    \begin{beamercolorbox}[colsep*=.75ex, ht=-1.2ex]{block title}%
     \end{beamercolorbox}
 }
 \newlength\block@rule@size
