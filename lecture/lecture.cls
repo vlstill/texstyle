@@ -167,6 +167,8 @@
 \setbeamercolor{title}{fg=black}
 \setbeamercolor{titlelike}{fg=black}
 
+\setbeamercolor{description item}{bg=fiyellow, fg=black}
+
 \setbeamercolor{author in head/foot}{fg=darkgray, bg=filight}
 \setbeamercolor{date in head/foot}{fg=darkgray, bg=filight}
 \setbeamercolor{title in head/foot}{fg=darkgray, bg=filight}
