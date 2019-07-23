@@ -42,7 +42,20 @@
 \RequirePackage{IEEEtrantools}
 
 \RequirePackage{listings}
-\RequirePackage[oldenum,olditem]{paralist}
+
+\RequirePackage[shortlabels]{enumitem}
+\newlist{compactitem}{itemize}{4}
+\setlist[compactitem]{nosep}
+\setlist[compactitem,1]{label=\textbullet}
+\setlist[compactitem,2]{label={\normalfont\bfseries \textendash}}
+\setlist[compactitem,3]{label=\textasteriskcentered}
+\setlist[compactitem,4]{label=\textperiodcentered}
+\newlist{compactenum}{enumerate}{3}
+\setlist[compactenum]{nosep}
+\setlist[compactenum,1]{a)} \setlist[enumerate,1]{a)}
+\setlist[compactenum,2]{i.} \setlist[enumerate,2]{i.}
+\setlist[compactenum,3]{1.} \setlist[enumerate,3]{1.}
+
 \RequirePackage{tabularx}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 
