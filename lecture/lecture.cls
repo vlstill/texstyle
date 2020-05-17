@@ -1,8 +1,8 @@
 % slidy.sty
 % (c) 2014 Vladimír Štill template for PB173 slides
-% (c) 2016 Vladimír Štill generic slides for FI MU
+% (c) 2016–2020 Vladimír Štill generic slides for FI MU
 
-\ProvidesClass{slides}[2016/02/17 v 0.3 slides]
+\ProvidesClass{slides}[2020/05/17 v 0.3.1 slides]
 \NeedsTeXFormat{LaTeX2e}
 
 \newif\if@bw\@bwfalse
@@ -199,7 +199,7 @@
 %    \end{beamercolorbox}%
 %
     \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex]{title in head/foot}%
-        \usebeamerfont{title in head/foot}~\insertshortsubtitle: \insertshorttitle
+        \usebeamerfont{title in head/foot}~\ifx\insertsubtitle\empty\insertshorttitle\else\insertshortsubtitle: \insertshorttitle\fi
     \end{beamercolorbox}%
 %
     \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
